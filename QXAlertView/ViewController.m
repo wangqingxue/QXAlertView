@@ -22,10 +22,37 @@
     
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    QXAlertView *alertView = [QXAlertView initWithTitleSting:@"标题" andMessage:@"详细信息" andOtherBtn:@"取消" andSubMitStr:@"确定" andBackBlock:^(NSInteger select) {
+- (IBAction)upToDown:(id)sender {
+    QXAlertView *alertView = [QXAlertView initWithTitleSting:@"标题title" andMessage:@"详细信息" andOtherBtn:@"取消" andSubMitStr:@"确定" andBackBlock:^(NSInteger select) {
         NSLog(@"%ld",select);
     }];
+    alertView.duration = 0.8;
+    alertView.alertType = AlertViewSelectTypeUpToDown;
+    [alertView showWithView:self.view];
+}
+
+- (IBAction)leftToRight:(id)sender {
+    QXAlertView *alertView = [QXAlertView initWithTitleSting:@"标题title" andMessage:@"详细信息" andOtherBtn:@"取消" andSubMitStr:@"确定" andBackBlock:^(NSInteger select) {
+        NSLog(@"%ld",select);
+    }];
+    alertView.duration = 1.2;
+    alertView.alertType = AlertViewSelectTypeZoom;
+    [alertView showWithView:self.view];
+}
+- (IBAction)rightToLeft:(id)sender {
+    QXAlertView *alertView = [QXAlertView initWithTitleSting:@"标题title" andMessage:@"详细信息" andOtherBtn:@"取消" andSubMitStr:@"确定" andBackBlock:^(NSInteger select) {
+        NSLog(@"%ld",select);
+    }];
+    alertView.duration = 1.2;
+    alertView.alertType = AlertViewSelectTypeRightToLeft;
+    [alertView showWithView:self.view];
+}
+- (IBAction)leftToRightAnimate:(id)sender {
+    QXAlertView *alertView = [QXAlertView initWithTitleSting:@"标题title" andMessage:@"详细信息" andOtherBtn:@"取消" andSubMitStr:@"确定" andBackBlock:^(NSInteger select) {
+        NSLog(@"%ld",select);
+    }];
+    alertView.duration = 1.2;
+    alertView.alertType = AlertViewSelectTypeLeftToRight;
     [alertView showWithView:self.view];
 }
 
